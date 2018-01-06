@@ -17,7 +17,7 @@
 
 ## Author
 
-* [Olu Udeh](oluudeh@gmail.com)
+* [Olu Udeh]
 
 ## License
 
