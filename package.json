@@ -1,0 +1,26 @@
+{
+  "name": "vue-chip",
+  "version": "0.0.1",
+  "description": "A chip component for VueJs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oluudeh/vue-chip.git"
+  },
+  "keywords": [
+    "VueJs",
+    "Chip"
+  ],
+  "author": "Olu Udeh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oluudeh/vue-chip/issues"
+  },
+  "homepage": "https://github.com/oluudeh/vue-chip#readme",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
+}
