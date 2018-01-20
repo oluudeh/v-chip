@@ -1,5 +1,5 @@
 {
-  "name": "vue-chip",
+  "name": "v-chip",
   "version": "0.0.1",
   "description": "A chip component for VueJs.",
   "main": "index.js",
