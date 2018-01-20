@@ -1,4 +1,4 @@
 import VueChip from './VueChip.vue'
 export default {
-	install: vue => vue.component('vue-chip', VueChip)
+	install: vue => vue.component('v-chip', VueChip)
 }

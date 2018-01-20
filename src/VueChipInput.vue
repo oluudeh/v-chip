@@ -2,7 +2,7 @@
 	<div>
 		<div class="chipinput-container">
 			<div class="chips-container">
-				<vue-chip v-for="item, index in modelValue" :closable="true" :index="index" :key="item" :label="item" @click.native="removeItem"></vue-chip>
+				<v-chip v-for="item, index in modelValue" :closable="true" :index="index" :key="item" :label="item" @click.native="removeItem"></v-chip>
 
 			</div>
 			<br/>
