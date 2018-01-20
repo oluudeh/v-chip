@@ -29,6 +29,8 @@
 
 <script>
 	export default {
+		name: 'v-chip-input',
+		
 		model: {
 			prop: 'modelValue',
 			event: 'enter' 

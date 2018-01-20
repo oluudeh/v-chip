@@ -2,14 +2,14 @@
   "name": "v-chip",
   "version": "0.1.2",
   "description": "A chip component for VueJs.",
-  "main": "index.js",
+  "main": "src/v-chip.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oluudeh/vue-chip.git"
+    "url": "git+https://github.com/oluudeh/v-chip.git"
   },
   "keywords": [
     "vue.js",
@@ -19,18 +19,18 @@
   "author": "Olu Udeh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/oluudeh/vue-chip/issues"
+    "url": "https://github.com/oluudeh/v-chip/issues"
   },
-  "homepage": "https://github.com/oluudeh/vue-chip#readme",
+  "homepage": "https://github.com/oluudeh/v-chip#readme",
   "devDependencies": {
-    "webpack": "^3.10.0"
-  },
-  "dependencies": {
+    "webpack": "^3.10.0",
     "css-loader": "^0.28.8",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "vue": "^2.5.13",
     "vue-loader": "^13.7.0",
     "vue-template-compiler": "^2.5.13"
+  },
+  "dependencies": {
   }
 }
