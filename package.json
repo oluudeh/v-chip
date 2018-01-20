@@ -13,7 +13,8 @@
   },
   "keywords": [
     "vue.js",
-    "chip"
+    "chip",
+    "component"
   ],
   "author": "Olu Udeh",
   "license": "MIT",
@@ -26,8 +27,10 @@
   },
   "dependencies": {
     "css-loader": "^0.28.8",
-    "html-loader": "^0.5.4",
-    "vue-loader": "^13.6.2",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "vue": "^2.5.13",
+    "vue-loader": "^13.7.0",
     "vue-template-compiler": "^2.5.13"
   }
 }

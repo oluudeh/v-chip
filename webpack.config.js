@@ -2,9 +2,9 @@ const path = require('path');
 
 module.exports = {
 	entry: {
-		chip: './src/vue-chip.js',
-		chipinput: './src/vue-chip-input.js',
-		chipautocomplete: './src/vue-chip-autocomplete.js'
+		'v-chip': './src/vue-chip.js',
+		'v-chip-input': './src/vue-chip-input.js',
+		//test: './test/app.js'
 	},
 
 	output: {
@@ -14,7 +14,7 @@ module.exports = {
 
 	module: {
 		rules: [
-			{test : /\.(vue)$/, use: 'html-loader'}
+			{test : /\.(vue)$/, use: 'vue-loader'}
 		]
 	}
 }
