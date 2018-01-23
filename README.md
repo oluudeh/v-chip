@@ -88,7 +88,7 @@ Vue.use(VChipInput)
 | img-src | String | false | null | 
 | closable | Boolean| false | false | 
 | color   | String | false | #333 |
-| bgColor | String | false | #f1f1f1 |
+| bg-color | String | false | #f1f1f1 |
 
 
 ### v-chip-input
