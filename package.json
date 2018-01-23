@@ -1,6 +1,6 @@
 {
   "name": "v-chip",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A chip component for VueJs.",
   "main": "src/v-chip.js",
   "scripts": {
