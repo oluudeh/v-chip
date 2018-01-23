@@ -1,21 +1,26 @@
 <template>
 	<div>
-		<div class="chipinput-container">
+		<div ref="chips" class="chipinput-container">
 			<div class="chips-container">
 				<v-chip v-for="item, index in modelValue" :closable="true" :index="index" :key="item" :label="item" @click.native="removeItem"></v-chip>
 
 			</div>
-			<br/>
+			<div v-if="modelValue.length > 0" class="divider"></div>
+
 			<datalist v-if="options" id="vue-autocomplete-list">
 				<option v-for="option in options" :value="option"></option>
 			</datalist>
-			<input v-if="options" type="text" :class="inputClass" list="vue-autocomplete-list" @input="onInput" >
-			<input v-else type="text" :class="inputClass" @keyup.enter="onEnter">
+			<div ref="chipinput">
+				<input v-if="options" type="text" :class="inputClass" list="vue-autocomplete-list" @input="onInput" >
+				<input v-else type="text" :class="inputClass" @keyup.enter="onEnter">				
+			</div>
 		</div>
 	</div>
 </template>
 
 <style>
+	.chipinput-container{
+	}
 	.chips-container {
 		display: block!important;
 		width: 100%!important;
@@ -24,12 +29,17 @@
 	}
 	.chipinput-container input{
 		display: block!important;
+		background: blue;
+	}
+	.divider{
+		display: block;
+		width: 100%;
+		height: 50px!important;
 	}
 </style>
 
 <script>
 	export default {
-		name: 'v-chip-input',
 		
 		model: {
 			prop: 'modelValue',
@@ -40,6 +50,9 @@
 			options: {type: Array, required: false},
 			modelValue: {type: Array},
 			inputClass: {type: String, required: false},
+		},
+
+		mounted(){
 		},
 
 		methods: {

@@ -44,19 +44,19 @@
 <style lang="scss">
 	.chip{
 		display: inline-block;
-		padding: 0 25px;
-		height: 50px;
+		padding: 0 15px;
+		height: 40px;
 		font-size: 16px;
-		line-height: 50px;
-		border-radius: 25px;
+		line-height: 40px;
+		border-radius: 20px;
 		float: left;
 		margin: 2px;
 
 		img{
 			float: left;
-			margin: 0 10px 0 -25px;
-			height: 42px;
-			width: 42px;
+			margin: 0 10px 0 -15px;
+			height: 32px;
+			width: 32px;
 			border-radius: 50%;
 		}
 	}
@@ -65,7 +65,7 @@
 		color: #888;
 		font-weight: bold;
 		float: right;
-		font-size: 20px;
+		font-size: 15px;
 		cursor: pointer;
 		&:hover{
 			color: #000;

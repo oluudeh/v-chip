@@ -531,7 +531,7 @@ module.exports = function listToStyles (parentId, list) {
 		index: { type: Number, required: false },
 		closable: { type: Boolean, required: false, default: false},
 		bgColor: { type: String, required: false, default: '#f1f1f1' },
-		color: { type: String, required: false, default: '#000' }
+		color: { type: String, required: false, default: '#333' }
 	},
 
 	mounted(){
@@ -542,8 +542,6 @@ module.exports = function listToStyles (parentId, list) {
 
 	    if (this.imgSrc != null) {
 	    	let img =  this.$refs.img
-	    	console.log('COLOR ' +this.color + ' bgColor '+ this.bgColor)
-	    	console.log(img)
 	    	img.border = '4px solid'
 	    	img.style.borderColor = this.bgColor
 	    }
@@ -592,9 +590,19 @@ module.exports = function listToStyles (parentId, list) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-	name: 'v-chip-input',
 	
 	model: {
 		prop: 'modelValue',
@@ -607,13 +615,7 @@ module.exports = function listToStyles (parentId, list) {
 		inputClass: {type: String, required: false},
 	},
 
-	data: function(){
-		return {
-		}
-	},
-
 	mounted(){
-
 	},
 
 	methods: {
@@ -762,7 +764,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.chip {\n  display: inline-block;\n  padding: 0 25px;\n  height: 50px;\n  font-size: 16px;\n  line-height: 50px;\n  border-radius: 25px;\n  float: left;\n  margin: 2px;\n}\n.chip img {\n    float: left;\n    margin: 0 10px 0 -25px;\n    height: 42px;\n    width: 42px;\n    border-radius: 50%;\n}\n.closebtn {\n  padding-left: 10px;\n  color: #888;\n  font-weight: bold;\n  float: right;\n  font-size: 20px;\n  cursor: pointer;\n}\n.closebtn:hover {\n    color: #000;\n}\n", ""]);
+exports.push([module.i, "\n.chip {\n  display: inline-block;\n  padding: 0 15px;\n  height: 40px;\n  font-size: 16px;\n  line-height: 40px;\n  border-radius: 20px;\n  float: left;\n  margin: 2px;\n}\n.chip img {\n    float: left;\n    margin: 0 10px 0 -15px;\n    height: 32px;\n    width: 32px;\n    border-radius: 50%;\n}\n.closebtn {\n  padding-left: 10px;\n  color: #888;\n  font-weight: bold;\n  float: right;\n  font-size: 15px;\n  cursor: pointer;\n}\n.closebtn:hover {\n    color: #000;\n}\n", ""]);
 
 // exports
 
@@ -931,7 +933,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.chips-container {\n\tdisplay: block!important;\n\twidth: 100%!important;\n\tclear: both;\n\tmin-width: 100%;\n}\n.chipinput-container input{\n\tdisplay: block!important;\n}\n", ""]);
+exports.push([module.i, "\n.chipinput-container{\n}\n.chips-container {\n\tdisplay: block!important;\n\twidth: 100%!important;\n\tclear: both;\n\tmin-width: 100%;\n}\n.chipinput-container input{\n\tdisplay: block!important;\n\tbackground: blue;\n}\n.divider{\n\tdisplay: block;\n\twidth: 100%;\n\theight: 50px!important;\n}\n", ""]);
 
 // exports
 
@@ -946,7 +948,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "chipinput-container" }, [
+    _c("div", { ref: "chips", staticClass: "chipinput-container" }, [
       _c(
         "div",
         { staticClass: "chips-container" },
@@ -963,7 +965,9 @@ var render = function() {
         })
       ),
       _vm._v(" "),
-      _c("br"),
+      _vm.modelValue.length > 0
+        ? _c("div", { staticClass: "divider" })
+        : _vm._e(),
       _vm._v(" "),
       _vm.options
         ? _c(
@@ -975,27 +979,29 @@ var render = function() {
           )
         : _vm._e(),
       _vm._v(" "),
-      _vm.options
-        ? _c("input", {
-            class: _vm.inputClass,
-            attrs: { type: "text", list: "vue-autocomplete-list" },
-            on: { input: _vm.onInput }
-          })
-        : _c("input", {
-            class: _vm.inputClass,
-            attrs: { type: "text" },
-            on: {
-              keyup: function($event) {
-                if (
-                  !("button" in $event) &&
-                  _vm._k($event.keyCode, "enter", 13, $event.key)
-                ) {
-                  return null
+      _c("div", { ref: "chipinput" }, [
+        _vm.options
+          ? _c("input", {
+              class: _vm.inputClass,
+              attrs: { type: "text", list: "vue-autocomplete-list" },
+              on: { input: _vm.onInput }
+            })
+          : _c("input", {
+              class: _vm.inputClass,
+              attrs: { type: "text" },
+              on: {
+                keyup: function($event) {
+                  if (
+                    !("button" in $event) &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key)
+                  ) {
+                    return null
+                  }
+                  _vm.onEnter($event)
                 }
-                _vm.onEnter($event)
               }
-            }
-          })
+            })
+      ])
     ])
   ])
 }
