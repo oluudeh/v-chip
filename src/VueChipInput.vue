@@ -42,15 +42,6 @@
 			inputClass: {type: String, required: false},
 		},
 
-		data: function(){
-			return {
-			}
-		},
-
-		mounted(){
-
-		},
-
 		methods: {
 			onEnter(ev){
 				var text = ev.target.value

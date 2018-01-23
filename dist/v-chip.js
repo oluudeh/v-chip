@@ -526,17 +526,33 @@ module.exports = function listToStyles (parentId, list) {
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 	props: {
-		imgSrc: { type: String, required: false },
+		imgSrc: { type: String, required: false, default: null },
 		label: { type: String, required: true },
 		index: { type: Number, required: false },
 		closable: { type: Boolean, required: false, default: false},
+		bgColor: { type: String, required: false, default: '#f1f1f1' },
+		color: { type: String, required: false, default: '#000' }
+	},
+
+	mounted(){
+		let chip = this.$refs.chip
+		chip.style.color = this.color
+	    chip.style.backgroundColor = this.bgColor
+
+
+	    if (this.imgSrc != null) {
+	    	let img =  this.$refs.img
+	    	console.log('COLOR ' +this.color + ' bgColor '+ this.bgColor)
+	    	console.log(img)
+	    	img.border = '4px solid'
+	    	img.style.borderColor = this.bgColor
+	    }
 	},
 
 	methods: {
 		closeChip(ev){
 			ev.target.parentElement.style.display = 'none';
 		},
-
 		
 	},
 });
@@ -648,7 +664,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.chip {\n  display: inline-block;\n  padding: 0 25px;\n  height: 50px;\n  font-size: 16px;\n  line-height: 50px;\n  border-radius: 25px;\n  background-color: #f1f1f1;\n  float: left;\n  margin: 2px;\n}\n.chip img {\n    float: left;\n    margin: 0 10px 0 -25px;\n    height: 43px;\n    width: 43px;\n    border-radius: 50%;\n    border: 4px solid #f1f1f1;\n}\n.closebtn {\n  padding-left: 10px;\n  color: #888;\n  font-weight: bold;\n  float: right;\n  font-size: 20px;\n  cursor: pointer;\n}\n.closebtn:hover {\n    color: #000;\n}\n", ""]);
+exports.push([module.i, "\n.chip {\n  display: inline-block;\n  padding: 0 25px;\n  height: 50px;\n  font-size: 16px;\n  line-height: 50px;\n  border-radius: 25px;\n  float: left;\n  margin: 2px;\n}\n.chip img {\n    float: left;\n    margin: 0 10px 0 -25px;\n    height: 42px;\n    width: 42px;\n    border-radius: 50%;\n}\n.closebtn {\n  padding-left: 10px;\n  color: #888;\n  font-weight: bold;\n  float: right;\n  font-size: 20px;\n  cursor: pointer;\n}\n.closebtn:hover {\n    color: #000;\n}\n", ""]);
 
 // exports
 
@@ -663,36 +679,41 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "chip", attrs: { index: _vm.index } }, [
-      _c("img", {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.imgSrc,
-            expression: "imgSrc"
-          }
-        ],
-        attrs: { src: _vm.imgSrc, alt: "Person", width: "96", height: "96" }
-      }),
-      _vm._v("\n\t\t" + _vm._s(_vm.label) + "\n\t\t"),
-      _c(
-        "span",
-        {
+    _c(
+      "div",
+      { ref: "chip", staticClass: "chip", attrs: { index: _vm.index } },
+      [
+        _c("img", {
           directives: [
             {
               name: "show",
               rawName: "v-show",
-              value: _vm.closable,
-              expression: "closable"
+              value: _vm.imgSrc,
+              expression: "imgSrc"
             }
           ],
-          staticClass: "closebtn",
-          attrs: { onclick: "this.parentElement.style.display = 'none'" }
-        },
-        [_vm._v("×")]
-      )
-    ])
+          ref: "img",
+          attrs: { src: _vm.imgSrc, alt: "Person", width: "96", height: "96" }
+        }),
+        _vm._v("\n\t\t" + _vm._s(_vm.label) + "\n\t\t"),
+        _c(
+          "span",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.closable,
+                expression: "closable"
+              }
+            ],
+            staticClass: "closebtn",
+            attrs: { onclick: "this.parentElement.style.display = 'none'" }
+          },
+          [_vm._v("×")]
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = []

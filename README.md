@@ -42,6 +42,10 @@ Vue.use(VChipInput)
 		<!-- Closable chip with label and image -->
 		<v-chip img-src="avatar.jpg" label="John Doe" :closable="true"></v-chip>
 
+		<!-- With text and background color -->
+		<v-chip img-src="avatar.jpg" label="Harry Doe" :closable="true" bg-color="#003b62" color="#89aec5"></v-chip>
+
+
 		<!-- chips from input field -->
 		<v-chip-input v-model="humans"></v-chip-input>
 
@@ -83,6 +87,8 @@ Vue.use(VChipInput)
 | label | String | true | null | 
 | img-src | String | false | null | 
 | closable | Boolean| false | false | 
+| color   | String | false | #333 |
+| bgColor | String | false | #f1f1f1 |
 
 
 ### v-chip-input
